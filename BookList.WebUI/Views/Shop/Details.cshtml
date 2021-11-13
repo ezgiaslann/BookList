@@ -1,0 +1,92 @@
+﻿@model ProductDetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-sm-9 padding-right">
+                <div class="product-details">
+                    <!--product-details-->
+                    <div class="col-sm-5">
+                        <div class="view-product">
+                            <img src="/img/@Model.Product.ImageUrl" alt="@Model.Product.Name" class="img-fluid"/>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information">
+                            <!--/product-information-->
+                            <img src="" class="newarrival" alt="" />
+                            <h2>@Model.Product.Name</h2>
+                            <hr/>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>
+                        }
+
+                            <span>
+                                <span>@Model.Product.Price</span>
+
+                                <button type="button" class="btn btn-fefault cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Sepete Ekle
+                                </button>
+                            </span>
+                            <p><b>Yazar:</b> Yılmaz Özdil </p>
+                            <p><b>Çevirmen:</b> - </p>
+                            <p><b>Yayınevi:</b> Kırmızı Kedi </p>
+                            <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                        </div><!--/product-information-->
+                    </div>
+                </div><!--/product-details-->
+
+                <div class="category-tab shop-details-tab">
+                    <!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#details" data-toggle="tab">Detay</a></li>
+
+                            <li><a href="#reviews" data-toggle="tab">Yorumlar</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="details">
+                            <div class="col-sm-3">
+                                <p style="width: 650px">
+                                   @Html.Raw(Model.Product.Description)
+                                </p>
+                            </div>
+                        </div>
+                        <div class=tab-pane fade" id="reviews">
+                            <div class="col-sm-12">
+                                <ul>
+                                </ul>
+
+                                <p><b>Yorumunuzu Yazın:</b></p>
+
+                                <form action="#">
+
+                                    <textarea name=""></textarea>
+
+                                    <button type="button" class="btn btn-default pull-right">
+                                        Yorum Yap
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--/category-tab-->
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
