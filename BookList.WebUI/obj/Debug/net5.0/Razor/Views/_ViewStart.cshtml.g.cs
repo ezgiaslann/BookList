@@ -20,14 +20,14 @@ using BookList.Entities;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\ASUS\Desktop\BookList\BookList.WebUI\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\ASUS\Desktop\BookList\BookList.WebUI\Views\_ViewImports.cshtml"
 using BookList.WebUI.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bf7321b0c3794f41534220e01fac70d369ccc2be", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c940b6e7e19d93f1b36d14ef87ed73c733bb9d09", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d99a2dd0eeec073388c536183260d90fe511d401", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

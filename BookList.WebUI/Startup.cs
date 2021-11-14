@@ -87,7 +87,7 @@ namespace BookList.WebUI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -110,12 +110,22 @@ namespace BookList.WebUI
                 //);
 
                 routes.MapRoute(
-                    name: "adminProducts",
-                    template: "admin/products/{id?}",
+                   name: "adminProducts",
+                   template: "admin/products/{id?}",
+                   defaults: new
+                   {
+                       controller = "Admin",
+                       action = "EditProduct"
+                   }
+               );
+
+                routes.MapRoute(
+                    name: "cart",
+                    template: "cart",
                     defaults: new
                     {
-                        controller = "Admin",
-                        action = "EditProduct"
+                        controller = "Cart",
+                        action = "Index"
                     }
                 );
 
@@ -134,6 +144,8 @@ namespace BookList.WebUI
                     template: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
+
+            SeedIdentity.Seed(userManager, roleManager, Configuration).Wait();
         }
     }
 }

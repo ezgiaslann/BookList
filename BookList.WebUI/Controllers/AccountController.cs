@@ -103,6 +103,12 @@ namespace BookList.WebUI.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+            //TempData.Put("message", new ResultMessage()
+            //{
+            //    Title = "Oturum Kapatıldı.",
+            //    Message = "Hesabınız güvenli bir şekilde sonlandırıldı.",
+            //    Css = "warning"
+            //});
             return Redirect("~/");
         }
 
@@ -110,5 +116,10 @@ namespace BookList.WebUI.Controllers
         //{
         //    return View()
         //}
+
+        public IActionResult Accessdenied()
+        {
+            return View();
+        }
     }
 }

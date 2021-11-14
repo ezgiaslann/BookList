@@ -49,4 +49,3 @@ C:\Users\ASUS\Desktop\BookList\BookList.DataAccess\obj\Debug\net5.0\BookList.Dat
 C:\Users\ASUS\Desktop\BookList\BookList.DataAccess\obj\Debug\net5.0\ref\BookList.DataAccess.dll
 C:\Users\ASUS\Desktop\BookList\BookList.DataAccess\obj\Debug\net5.0\BookList.DataAccess.pdb
 C:\Users\ASUS\Desktop\BookList\BookList.DataAccess\obj\Debug\net5.0\BookList.DataAccess.genruntimeconfig.cache
-C:\Users\ASUS\Desktop\BookList\BookList.DataAccess\obj\Debug\net5.0\BookList.DataAccess.csproj.CopyComplete

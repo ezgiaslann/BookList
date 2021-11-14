@@ -10,9 +10,10 @@
                 <li class="nav-item">
                     <a asp-controller="Shop" asp-action="List" class="nav-link" style="color: #888">Ürünler</a>
                 </li>
-
-                <li>Sepet &nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></li>
-
+                <li class="nav-item">
+                    <a asp-controller="Cart" asp-action="Index" class="nav-link" style="color: #888">Sepet &nbsp;<i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
+                </li>
+              
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" asp-controller="Account" asp-action="Manage" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #888">
                         @User.Identity.Name
@@ -23,18 +24,21 @@
                     </div>
                 </li>
 
+                if (User.IsInRole("admin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" asp-controller="Account" asp-action="Manage" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #888">
+                            Admin Paneli
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a asp-controller="Admin" asp-action="CreateProduct" class="dropdown-item">Add Product</a>
+                            <a asp-controller="Admin" asp-action="ProductList" class="dropdown-item">Admin Products</a>
+                            <a asp-controller="Admin" asp-action="CreateCategory" class="dropdown-item">Add Category</a>
+                            <a asp-controller="Admin" asp-action="CategoryList" class="dropdown-item">Admin Categories</a>
+                        </div>
+                    </li>
+                }
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" asp-controller="Account" asp-action="Manage" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #888">
-                        Admin Paneli
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a asp-controller="Admin" asp-action="CreateProduct" class="dropdown-item">Add Product</a>
-                        <a asp-controller="Admin" asp-action="ProductList" class="dropdown-item">Admin Products</a>
-                        <a asp-controller="Admin" asp-action="CreateCategory" class="dropdown-item">Add Category</a>
-                        <a asp-controller="Admin" asp-action="CategoryList" class="dropdown-item">Admin Categories</a>
-                    </div>
-                </li>
             }
             else
             {
