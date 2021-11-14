@@ -3,12 +3,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Shopping Cart</h1>
+<h1 style="margin-top: 4rem;">Alışveriş Sepeti</h1>
 
 <div class="row mt-5">
     <div class="col-md-8">
         <div class="text-left">
-            <h4>Cart Items</h4>
+            <h4>Alışveriş Detayı</h4>
         </div>
 
         @if (Model.CartItems.Count > 0)
@@ -20,7 +20,7 @@
                         <th>Ürün Adı</th>
                         <th>Ürün Fiyatı</th>
                         <th>Ürün Adedi</th>
-                        <th>Toplam Fiyat</th>
+                        <th>Toplam Fiyatı</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -62,30 +62,30 @@
         @if (Model.CartItems.Count > 0)
         {
             <div class="text-left">
-                <h4>Cart Summary</h4>
+                <h4>Alışveriş Toplamı</h4>
             </div>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th>Cart Total</th>
+                        <th>Fiyat Toplamı</th>
                         <td>@Model.TotalPrice().ToString("c")</td>
                     </tr>
                     <tr>
-                        <th>Shipping</th>
-                        <td>Free</td>
+                        <th>Ödeme</th>
+                        <td></td>
                     </tr>
                     <tr>
-                        <th>Order Total</th>
+                        <th>Ürün Toplamı</th>
                         <td>@Model.TotalPrice().ToString("c")</td>
                     </tr>
                 </tbody>
             </table>
             <div class="text-center">
                 <a href="/" class="btn btn-primary">
-                    <i class="fa fa-arrow-circle-left fa-fw"></i> Continue Shopping
+                    <i class="fa fa-arrow-circle-left fa-fw"></i> Alışverişe Devam Et
                 </a>
                 <a href="/checkout" class="btn btn-primary">
-                    Checkout <i class="fa fa-arrow-circle-right fa-fw"></i>
+                    Ödeme Yap <i class="fa fa-arrow-circle-right fa-fw"></i>
                 </a>
             </div>
 
