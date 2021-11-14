@@ -109,15 +109,15 @@ namespace BookList.WebUI
                 //  }
                 //);
 
-                // routes.MapRoute(
-                //     name: "adminProducts",
-                //     template: "admin/products/{id?}",
-                //     defaults: new
-                //     {
-                //         controller = "Admin",
-                //         action = "EditProduct"
-                //     }
-                // );
+                routes.MapRoute(
+                    name: "adminProducts",
+                    template: "admin/products/{id?}",
+                    defaults: new
+                    {
+                        controller = "Admin",
+                        action = "EditProduct"
+                    }
+                );
 
                 routes.MapRoute(
                   name: "products",

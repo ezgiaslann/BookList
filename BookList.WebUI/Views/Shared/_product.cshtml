@@ -1,18 +1,17 @@
-﻿@model Product 
+﻿@model Product
 
-<div class="col-md-4">
-    <div class="card mb-3">
-       <img src="~/img/@Model.ImageUrl" alt="@Model.Name"/>
+<div class="col-md-3">
+    <div class="card mb-1">
+        <img src="~/img/@Model.ImageUrl" alt="@Model.Name" />
         <div class="card-body"></div>
         <h4 class="card-title">
-            <a href="#">@Model.Name</a>
+            <p style="color:#888; text-align: center;">@Model.Name</p>
         </h4>
-        <small class="text-muted">
-            <i class="fas fa-turkish-lira"></i> @Model.Price
-        </small>
+
         <div class="card-footer text-center">
-            <a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-primary btn-sm">Details</a>
-            <a href="#" class="btn btn-outline-primary btn-sm ml-3">Add To Cart</a>
+            <a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-primary btn-sm" style="color:#888">Details</a>
+            <a href="#" class="btn btn-outline-primary btn-sm ml-3" style="color:#888">Add To Cart</a>
+
         </div>
     </div>
 </div>

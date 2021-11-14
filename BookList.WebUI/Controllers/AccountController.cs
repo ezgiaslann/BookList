@@ -51,7 +51,7 @@ namespace BookList.WebUI.Controllers
             {
                 //Generate Token
                 //Send Mail
-                return RedirectToAction("account", "login");
+                return RedirectToAction("login", "account");
             }
 
 

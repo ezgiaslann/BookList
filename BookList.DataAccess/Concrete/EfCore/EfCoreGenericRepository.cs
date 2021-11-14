@@ -15,7 +15,7 @@ namespace BookList.DataAccess.Concrete.EfCore
     {
         public void Create(T entity)
         {
-            using(var context = new TContext())
+            using (var context = new TContext())
             {
                 context.Set<T>().Add(entity);
                 context.SaveChanges();
@@ -35,8 +35,9 @@ namespace BookList.DataAccess.Concrete.EfCore
         {
             using (var context = new TContext())
             {
-                return filter == null ? context.Set<T>().ToList()
-                                      : context.Set<T>().Where(filter).ToList();
+                return filter == null
+                         ? context.Set<T>().ToList()
+                         : context.Set<T>().Where(filter).ToList();
             }
         }
 
@@ -63,6 +64,11 @@ namespace BookList.DataAccess.Concrete.EfCore
                 context.Entry(entity).State = EntityState.Modified;
                 context.SaveChanges();
             }
+        }
+
+        public void Update(T entity, int[] categoryIds)
+        {
+            throw new NotImplementedException();
         }
     }
 }

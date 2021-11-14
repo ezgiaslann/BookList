@@ -1,7 +1,10 @@
 ﻿using BookList.Business.Abstract;
+using BookList.Business.ValiationRules.FluentValidation;
+using BookList.Core.ValiationRules.FluentValidation;
 using BookList.DataAccess.Abstract;
 using BookList.DataAccess.Concrete.EfCore;
 using BookList.Entities;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +22,12 @@ namespace BookList.Business.Concrete
             _productDal = productDal;
         }
 
+       
         public void Create(Product entity)
         {
+            //Validation
+            ValidationTool.Validate(new ProductValidator(), entity);
+
             _productDal.Create(entity);
         }
 
@@ -31,12 +38,17 @@ namespace BookList.Business.Concrete
 
         public List<Product> GetAll()
         {
-            return _productDal.GetAll().ToList();
+            return _productDal.GetAll();
         }
 
         public Product GetById(int id)
         {
             return _productDal.GetById(id);
+        }
+
+        public Product GetByIdWithCategories(int id)
+        {
+            return _productDal.GetByIdWithCategories(id);
         }
 
         public int GetCountByCategory(string category)
@@ -57,6 +69,11 @@ namespace BookList.Business.Concrete
         public void Update(Product entity)
         {
             _productDal.Update(entity);
+        }
+
+        public void Update(Product entity, int[] categoryIds)
+        {
+            _productDal.Update(entity, categoryIds);
         }
     }
 }
