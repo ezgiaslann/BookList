@@ -496,3 +496,4 @@ C:\Users\ASUS\Desktop\BookList\BookList.WebUI\bin\Debug\net5.0\BookList.Core.dll
 C:\Users\ASUS\Desktop\BookList\BookList.WebUI\bin\Debug\net5.0\BookList.Core.pdb
 C:\Users\ASUS\Desktop\BookList\BookList.WebUI\obj\Debug\net5.0\Razor\Views\Account\Accessdenied.cshtml.g.cs
 C:\Users\ASUS\Desktop\BookList\BookList.WebUI\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
+C:\Users\ASUS\Desktop\BookList\BookList.WebUI\obj\Debug\net5.0\Razor\Views\Cart\Checkout.cshtml.g.cs

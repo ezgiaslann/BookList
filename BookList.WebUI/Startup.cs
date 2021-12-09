@@ -130,6 +130,16 @@ namespace BookList.WebUI
                 );
 
                 routes.MapRoute(
+                    name: "checkout",
+                    template: "checkout",
+                    defaults: new
+                    {
+                        controller = "Cart",
+                        action = "Checkout"
+                    }
+                );
+
+                routes.MapRoute(
                   name: "products",
                   template: "products/{category?}",
                   defaults: new
